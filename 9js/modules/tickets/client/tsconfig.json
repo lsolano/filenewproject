@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "module": "umd",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "es5",
+    "isolatedModules": false,
+    "moduleResolution": "node",
+    "noLib": false,
+    "noEmitOnError": false
+  },
+  "files": [
+    "../../../../typings/tsd.d.ts",
+    "../../../../node_modules/ninejs/typings/tsd.d.ts",
+
+
+    "./module.ts",
+    "./common.ts",
+    "./TicketsClient.ts",
+    "./services/alertify.ts",
+    "./services/operations.ts",
+    "./skin/LoginScreen.ts",
+    "./widgets/Grid.ts",
+    "./widgets/TicketView.ts",
+    "./widgets/skin/TicketView.ts",
+    "./widgets/TicketList.ts",
+    "./widgets/skin/TicketList.ts",
+    "./widgets/AdminTicketList.ts",
+    "./widgets/skin/AdminTicketList.ts",
+    "./widgets/AdminTicket.ts",
+    "./widgets/skin/AdminTicket.ts",
+    "./widgets/SmallTicket.ts",
+    "./widgets/skin/SmallTicket.ts"
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"AdminTicketList.js","sourceRoot":"","sources":["AdminTicketList.ts"],"names":[],"mappings":";;;;;;;;IAEA,YAAY,CAAC;IAEb,qBAAiB,gBAEjB,CAAC,CAFgC;IAGjC,IAAI,QAAQ,GAAG,OAAO,CAAC,0BAA0B,CAAC,CAAC;IAEnD;sBAAe,IAAI,cAAI,CAAC;QACpB,OAAO,EAAE,EAAE;QACX,QAAQ,EAAE,QAAQ;QAClB,WAAW,EAAE,OAAO,CAAC,6BAA6B,CAAC;KACtD,CAAC,CAAC"}

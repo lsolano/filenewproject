@@ -1,0 +1,46 @@
+<div class="col-xs-12 panel panel-primary" xmlns:ui="amd://ninejs/ui">
+	<div class="col-xs-12 panel-heading">
+		<h4 class="col-xs-11">Ticket detail: %{ticket.title|String}</h4>
+	</div>
+	<div class="panel-body col-xs-12">
+
+		<form role="form" class="form-horizontal form-groups-bordered">
+
+			<input type="hidden" value="%{ticket._id}"/>
+
+			<div class="form-group">
+				<label for="field-1" class="col-sm-3 control-label">Ticket Name</label>
+
+				<ui:Editor dataType="alphanumeric" value="%{ticket.title}" class="col-sm-5" controlClass="form-control"
+						   placeholder="New Ticket"/>
+			</div>
+			<div class="form-group">
+				<label for="field-1" class="col-sm-3 control-label">Project Name</label>
+
+				<ui:Editor dataType="alphanumeric" value="%{ticket.projectName}" class="col-sm-5" controlClass="form-control"
+						   placeholder="Nine Tickets"/>
+			</div>
+
+			<div class="form-group">
+				<label for="field-2" class="col-sm-3 control-label">Description</label>
+
+				<ui:Editor dataType="alphanumeric" class="col-sm-5" controlClass="form-control" placeholder="Description" value="%{ticket.description}"></ui:Editor>
+			</div>
+
+			<div class="form-group">
+				<label for="field-3" class="col-sm-3 control-label">Status</label>
+
+				<ui:Editor dataType="list" class="col-sm-5" controlClass="form-control" placeholder="Description" value="%{ticket.status}" data-ninejs-attach="statusSelect"></ui:Editor>
+			</div>
+
+			<div class="col-xs-offset-10 col-xs-2">
+				<button type="button" class="btn btn-info entypo-save aButton" data-ninejs-on-click="saveButtonClicked">Save</button>
+				<div class="sepRight"></div>
+				<button type="button" class="btn btn-info entypo-save aButton" data-ninejs-on-click="cancelButtonClicked">Cancel</button>
+			</div>
+
+		</form>
+
+
+	</div>
+</div>

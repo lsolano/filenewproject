@@ -1,0 +1,8 @@
+{
+  "units": {
+    "tickets/web": {
+      "connectionName": "default",
+      "dbName": "tickets"
+    }
+  }
+}

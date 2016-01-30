@@ -1,0 +1,42 @@
+{
+  "modules": [
+    "ninejs-container-module",
+    "ninejs-auth-module",
+    "ninejs-auth-couchdb-module",
+    "ninejs-store"
+  ],
+  "units": {
+    "ninejs": {
+      "logging": [{
+        "name": "ninejs",
+        "level": 20,
+        "streams": [{
+          "level": "debug",
+          "stream": "console"
+        }]
+      }]
+    },
+    "ninejs/store/couchdb": {
+      "default": {
+        "host": "localhost",
+        "port": 5984,
+        "cache": false,
+        "raw": false,
+        "maxSockets": 10
+      }
+    },
+    "ninejs/auth/impl": {
+      "options": {
+        "couchDbConnection": "default",
+        "usersDb": "tickets"
+      }
+    },
+    "webserver": {
+      "default": {
+        "port": 2352,
+        "env": "development",
+        "favicon": "9js/modules/tickets/client/skin/images/logo.png"
+      }
+    }
+  }
+}

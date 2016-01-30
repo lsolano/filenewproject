@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "umd",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "es6",
+    "isolatedModules": false,
+    "moduleResolution": "node",
+    "noLib": false,
+    "noEmitOnError": false
+  },
+  "files": [
+    "node_modules/ninejs/typings/tsd.d.ts",
+
+    "9js/modules/tickets/module.ts",
+    "9js/modules/tickets/client/common.ts",
+    "9js/modules/tickets/service.ts",
+    "9js/modules/tickets/Tickets.ts",
+    "9js/modules/tickets/design/tickets.ts"
+  ]
+}

@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>File -> New -> Project -  Eduado Burgos</title>
+
+    <meta name="description" content="Una aplicación desde cero con NineJS y TypeScript">
+    <meta name="author" content="Eduardo Burgos">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h2>File -> New -> Project</h2>
+            <h3>Una aplicación desde cero con NineJS y TypeScript</h3>
+            <p>
+                <small>Por <a href="https://www.facebook.com/eduardoburgosm">Eduardo Burgos</a></small>
+            </p>
+            <img src="assets/15466-NQ467C.jpg" alt="" style="max-width: 49%" />
+            <aside class="notes">
+                Hola
+            </aside>
+        </section>
+
+        <section>
+            <h2>Quien soy?</h2>
+            <p>
+                Eduardo Burgos
+            </p>
+            <p>
+                eburgos@gmail.com
+            </p>
+            <img src="assets/eduardoburgos.jpg" />
+            <aside class="notes">
+
+            </aside>
+        </section>
+
+        <section>
+            <h2>Que veremos?</h2>
+            <ul>
+                <li class="fragment">Que hacer para iniciar un proyecto nuevo?</li>
+                <li class="fragment">NineJS: Algunos conceptos de modulos y dependencias</li>
+                <li class="fragment">Algunos conceptos client-side</li>
+                <li class="fragment">Vista rápida de una aplicación de ejemplo</li>
+            </ul>
+
+            <aside class="notes">
+
+            </aside>
+        </section>
+
+        <section>
+            <h2>Cosas que asumo para esta presentación:</h2>
+            <ul>
+                <li class="fragment">Todos saben que es Node.js y para que se utiliza <div style="    width: 6em;
+    height: 4em;
+    background-image: url('assets/nodejslogo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10em;"></div></li>
+                <li class="fragment">Todos saben que es Git y para que se utiliza <br /><img src="assets/gitlogo.png" alt="" style="margin-left: 10em"></li>
+                <li class="fragment">Todos tienen al menos una idea de qué es TypeScript <br /><img src="assets/typescriptlogo.png" alt="" style="margin-left: 10em"></li>
+            </ul>
+
+            <aside class="notes">
+
+            </aside>
+        </section>
+
+        <section>
+            <section>
+                <h2>Que hacer para iniciar un proyecto nuevo?</h2>
+                <img src="assets/1-1728x800_c.jpg" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Estructura inicial</h2>
+                <h4>Para un proyecto nuevo con TypeScript en ambos lugares (Node.js y Browser)</h4>
+                <ul>
+                    <li class="fragment">
+                        <span>Package.json</span>
+                        <code class="hljs">$ npm init<br /> //enter enter enter enter...</code>
+                    </li>
+                    <li class="fragment">
+                        <span>Gruntfile</span>
+                        <code class="hljs">
+                            $ npm install grunt --save-dev <br />
+                            $ touch Gruntfile.js <br />
+                            // etc etc
+                        </code>
+                    </li>
+                    <li class="fragment">
+                        <span>Instalar TypeScript</span>
+                        <code class="hljs">$ npm install Microsoft/TypeScript --save-dev</code>
+                    </li>
+                </ul>
+                <aside class="notes">
+
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Dependencias externas</h2>
+                <img src="assets/dependencias.png" alt="" style="max-width: 55%" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Dependencias server side</h2>
+                <div style="    width: 6em;
+    height: 4em;
+    background-image: url('assets/npm-logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10em;"></div>
+                <code class="hljs">
+                    $ npm install &lt;project&gt; --save
+                </code>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Client side</h2>
+                <img src="assets/gitlogo.png" alt="" style="max-width: 55%" />
+                <span style="font-size: 3em; font-weight: bolder; margin-left: 0.3em; margin-top: -0.2em;">+</span>
+                <div style="width: 4em; height: 4em; background-image: url('assets/grunt-logo.svg'); background-repeat: no-repeat; background-size: contain; margin-left: 18em; margin-top: -4em;"></div>
+                <pre class="fragment"><code class="hljs javascript">grunt.initConfig({
+    scm: {
+        dstore: {
+            type: 'git',
+            url: 'git://github.com/sitepen/dstore.git',
+            target: __dirname + '/9js/modules/tickets/lib/dstore',
+            branch: 'origin/1.x'
+        },
+        bootstrap: {
+            type: 'git',
+            url: 'git://github.com/twbs/bootstrap.git',
+            target: __dirname + '/9js/modules/tickets/lib/bootstrap',
+            branch: 'd533bf0cbc1f0c8c554a0023f2ae6086e3e93a42'
+        }
+    }
+});</code></pre>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Preprocesador de estilos</h2>
+                <div style="    width: 6em;
+    height: 4em;
+    background-image: url('assets/stylus-logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10em;"></div>
+                <p>Alternativas: </p>
+                <img src="assets/less-logo.png" alt="" />
+                <div style="width: 4em; height: 4em; background-image: url('assets/sass-logo.svg'); background-repeat: no-repeat; background-size: contain; margin-left: 18em; margin-top: -4em;"></div>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Templating engines</h2>
+
+                <div class="fragment">
+                    <img src="assets/TemplateEngine.png" alt="">
+                    <p><img src="assets/260.png" alt="" style="max-width: 1em; margin: 0" /> <span>Nineplate</span></p>
+                </div>
+                <p class="fragment">Alternativas: Handlebars, Mustache, etc</p>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Module loaders</h2>
+                <img src="assets/montacarga.png" alt="" style="max-width: 55%; background: none; border: 0; box-shadow: none" />
+                <p class="fragment"><img src="assets/requirejs-logo.png" alt="" style="max-width: 3em; margin: 0; background: none; border: 0; box-shadow: none" /> <span>RequireJS</span></p>
+                <p class="fragment">Alternativas: Dojo toolkit, CommonJS (Browserify), etc</p>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Optimizador de recursos y Javascript</h2>
+                <img src="assets/optimized.jpg" alt="" style="max-width: 55%" />
+                <p>dojo/util</p><p>Alternativas: r.js</p>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Diagrama de ejemplo de dependencias JS</h2>
+                <img src="assets/Dependencies1.png" alt="" style="max-width: 113%; margin: 0; background: none; border: 1px solid; border-radius:9px; box-shadow: none" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Dependencias por capas</h2>
+                <img src="assets/Dependencies2.png" alt="" style="max-width: 113%; margin: 0; background: none; border: 1px solid; border-radius:9px; box-shadow: none" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>NineJS</h2>
+                <img src="assets/github.png" alt="" style="    max-width: 5%;
+    border: 0;
+    background: 0; margin: 0" /><span>ninejs/ninejs</span>
+                <img src="assets/NineJS.png" alt="" style=" background: white; margin: 0" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Conceptos de módulos y dependencias</h2>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Módulos</h2>
+                <img src="assets/modules.png" alt="" style=" background: white; margin: 0" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Dependencias</h2>
+                <p>Los módulos dependen de units, no de módulos</p>
+                <p class="fragment">El propósito de un módulo es agrupar units</p>
+                <pre class="fragment" style="width: 100%;"><code style="font-size: 0.7em">'use strict';
+
+import { define } from 'ninejs/modules/moduleDefine'
+import Module from 'ninejs/modules/Module'
+import { default as WebServer } from 'ninejs/modules/webserver/WebServer'
+import { NineJs } from 'ninejs/modules/ninejs-server'
+import Tickets from './Tickets'
+import Auth from 'ninejs-auth-module'
+import CouchDB from 'ninejs-store/CouchDB'
+
+export default define(['ninejs', 'webserver', 'ninejs/auth', 'ninejs/store/couchdb'], (provide) => {
+    provide('tickets/web', (config: any, ninejs: NineJs, webserver: WebServer, auth: Auth, couchdb: CouchDB) => {
+        return new Tickets(config, ninejs, webserver, auth, couchdb);
+    });
+}); </code></pre>
+                <aside class="notes">
+
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Algunos conceptos client-side</h2>
+                <ul>
+                    <li class="fragment">Widgets</li>
+                    <li class="fragment">Router</li>
+                </ul>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Widgets</h2>
+                <img src="assets/modules.png" alt="" style=" background: white; margin: 0; max-width: 80%" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Router</h2>
+                <img src="assets/modules.png" alt="" style=" background: white; margin: 0; max-width: 80%" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Aplicación de ejemplo con NineJS y TypeScript</h2>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Aplicación de tickets</h2>
+                <img src="assets/ticketsapp.png" alt="" style=" background: white; margin: 0; max-width: 80%" />
+                <aside class="notes">
+
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <h2>Conclusión</h2>
+            <aside class="notes">
+
+            </aside>
+        </section>
+
+        <section>
+            <h2>Preguntas</h2>
+            <aside class="notes">
+                <b>Deberia ser las 41:00</b>
+            </aside>
+        </section>
+        <section>
+            <h2>Contacto</h2>
+            <ul>
+                <li><img src="assets/email-icon.png" alt="" style="    max-width: 5%;
+                    border: 0;
+                    background: 0; margin: 0" /><span>eburgos@gmail.com</span></li>
+                <li><img src="assets/email-icon.png" alt="" style="    max-width: 5%;
+    border: 0;
+    background: 0; margin: 0" /><span>eburgos@novosit.com</span></li>
+                <li><img src="assets/github.png" alt="" style="    max-width: 5%;
+    border: 0;
+    background: 0; margin: 0" /><span>eburgos</span> </li>
+                <li><img src="assets/github.png" alt="" style="    max-width: 5%;
+    border: 0;
+    background: 0; margin: 0" /><span>ninejs</span></li>
+            </ul>
+            <aside class="notes">
+                <b>Deberia ser las 44:30</b>
+            </aside>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: 'reveal.js/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'reveal.js/plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'reveal.js/plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'reveal.js/plugin/zoom-js/zoom.js', async: true},
+            {src: 'reveal.js/plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>

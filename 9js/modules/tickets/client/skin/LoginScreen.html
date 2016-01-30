@@ -1,0 +1,84 @@
+<div class="login-container login-page login-form-fall login-form-fall-init ticketsLoginScreen">
+
+	<div class="login-header login-caret">
+
+		<div class="login-content">
+
+			<h1>Nine Tickets</h1>
+			<a href="index.html" class="logo">
+				<img src="${skin.config.baseUrl}js/tickets/client/skin/images/logo.png" width="120" alt="" />
+			</a>
+
+			<p class="description">Dear user, log in to access</p>
+
+			<!-- progress bar indicator -->
+			<div class="login-progressbar-indicator">
+				<h3>43%</h3>
+				<span>logging in...</span>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="login-progressbar">
+		<div></div>
+	</div>
+
+	<div class="login-form">
+
+		<div class="login-content">
+
+			<div class="form-login-error">
+				<h3>Invalid login</h3>
+				<p>Enter <strong>demo</strong>/<strong>demo</strong> as login and password.</p>
+			</div>
+
+			<form method="post" role="form" id="form_login">
+
+				<div class="form-group">
+
+					<div class="input-group">
+						<div class="input-group-addon">
+							<i class="entypo-user" data-ninejs-attach="userNameIcon"></i>
+						</div>
+
+						<input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="off" data-ninejs-attach="userNameText" />
+					</div>
+
+				</div>
+
+				<div class="form-group">
+
+					<div class="input-group">
+						<div class="input-group-addon">
+							<i class="entypo-key" data-ninejs-attach="passwordIcon" ></i>
+						</div>
+
+						<input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off" data-ninejs-attach="passwordText" />
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<button type="button" class="btn btn-primary btn-block btn-login" data-ninejs-attach="loginButton">
+						<i class="entypo-login" data-ninejs-attach="loginIcon"></i>
+						<span>Login</span>
+					</button>
+				</div>
+
+
+
+			</form>
+
+
+			<div class="login-bottom-links">
+
+				<a data-ninejs-attach="forgotPasswordButton" href="extra-forgot-password.html" class="link hide">Forgot your password?</a>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,44 @@
+{
+  "name": "tickets",
+  "description": "tickets sample app with NineJS and TypeScript",
+  "version": "0.0.1",
+  "author": "Eduardo Burgos <eburgos@gmail.com>",
+  "repository": "git://github.com/eburgos/tickets.git",
+  "private": "true",
+  "dependencies": {
+    "bluebird": "^3.0.6",
+    "co": "^4.6.0",
+    "cradle": "^0.6.9",
+    "kew": "^0.7.0",
+    "ninejs": "^0.2.2",
+    "ninejs-store": "ninejs/ninejs-store",
+    "ninejs-container-module": "ninejs/ninejs-container-module",
+    "ninejs-auth-module": "ninejs/ninejs-auth-module",
+    "ninejs-auth-couchdb-module": "ninejs/ninejs-auth-couchdb-module"
+  },
+  "devDependencies": {
+    "fluidity": "^0.2.3",
+    "grunt": "^0.4.5",
+    "grunt-njs-stylus": "git://github.com/ninejs/grunt-njs-stylus.git",
+    "grunt-ts": "^5.2.0",
+    "less": "^2.5.3",
+    "load-grunt-tasks": "^3.3.0",
+    "nib": "^1.1.0",
+    "stylus": "^0.52.4",
+    "tsd": "^0.6.5",
+    "typescript": "git+https://github.com/Microsoft/typescript.git#dac1874c38c29352142757d14b06221af7590293"
+  },
+  "component": {
+    "scripts": {}
+  },
+  "scripts": {
+    "prepublish": "npm prune"
+  },
+  "contributors": [
+    {
+      "name": "Eduardo Burgos",
+      "email": "eburgos@gmail.com",
+      "url": "http://www.ninejs.com/"
+    }
+  ]
+}
