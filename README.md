@@ -14,6 +14,7 @@ To watch the presentation you must globally install http-server
 Then run grunt scm:revealjs to properly download reveal.js and then
 
     cd presentation
+    grunt scm --reset=hard
     http-server
     
 This will start a web server probably on port 8080 then go to http://localhost:8080/
@@ -28,10 +29,20 @@ run npm install
 run grunt
 
     grunt
+
+pull dependencies
+
+	grunt scm --reset=hard
+
+At this point make sure you have a CouchDB instance running in localhost port 5984 or you will have to configure that manually in 9js.config.json
+
+	couchdb start
     
 start the application
 
     node --harmony single
     
-This will start the application on port 2352 then go to http://localhost:2352/
+This will start the application on port 2352 then go to http://localhost:2352/ 
+Username is "admin", password is "password"
+You can create tickets, for the moment, only in the Manage Tickets part
 

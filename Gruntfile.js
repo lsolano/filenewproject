@@ -246,7 +246,15 @@ function exports(grunt) {
 							stdio: 'inherit'
 						});
 					childReset.on('exit', function () {
-						done();
+						if (hard) {
+							var childClean = childProcess.spawn(self.data.type, ['clean', '-f'], { stdio: 'inherit' });
+							childClean.on('exit', function () {
+								done();
+							});
+						}
+						else {
+							done();
+						}
 					});
 				});
 			}
